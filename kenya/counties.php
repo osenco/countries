@@ -7,10 +7,8 @@
  * @author Osen Concepts < hi@osen.coke >
  * @link https://wpthemes.osen.co.ke/nua
  */
-
 function ke_counties( $county = null ) 
 {
-  if( is_null( $county ) ){} else {
     if( is_int( $county ) ) {
       $counties = array( 
         'BAR' => __( 'Baringo', 'woocommerce' ),
@@ -61,8 +59,6 @@ function ke_counties( $county = null )
         'WJR' => __( 'Wajir', 'woocommerce' ),
         'PKT' => __( 'West Pokot', 'woocommerce' )
        );
-
-      return $counties[$county];
     } else {
       $counties = array( 
         'BAR' => __( 'Baringo', 'woocommerce' ),
@@ -113,7 +109,7 @@ function ke_counties( $county = null )
         'WJR' => __( 'Wajir', 'woocommerce' ),
         'PKT' => __( 'West Pokot', 'woocommerce' )
        );
-
-      return $counties[$county];
     }
+
+    return is_null( $county ) ? $counties : $counties[$county];
 }
